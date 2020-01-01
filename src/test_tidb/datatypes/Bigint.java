@@ -11,7 +11,6 @@ public class Bigint implements DataType {
 
     @Override
     public String getDataTypeName() {
-        // TODO Auto-generated method stub
         return  "BIGINT";
     }
 

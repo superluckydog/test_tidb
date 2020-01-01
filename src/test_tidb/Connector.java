@@ -1,18 +1,16 @@
 package test_tidb;
 
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Connection;
 
 public class Connector {
 
-    public static Connection getTidbConnection() {
+    public static Connection getConnection(String host, String port, String dbName, String user, String password) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://62.234.178.215:4000/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true", "test", "tidb_learner");
+                    ("jdbc:mysql://" + host + ":" + port + "/" + dbName + "?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true", user, password);
             return connection;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -23,7 +21,7 @@ public class Connector {
         return null;
     }
     
-    public static void closeTidbConnection(Connection connection) {
+    public static void closeConnection(Connection connection) {
         try {
             connection.close();
         } catch (SQLException e) {
@@ -32,7 +30,12 @@ public class Connector {
     }
     
     public static void main(String[] args) {
-        getTidbConnection();
+        String host = "62.234.178.215";
+        String port = "4000";
+        String dbName = "test";
+        String user = "test";
+        String password = "tidb_learner";      
+        getConnection(host, port, dbName, user, password);
     }
 
 }

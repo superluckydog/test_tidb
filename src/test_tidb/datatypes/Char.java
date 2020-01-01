@@ -12,7 +12,7 @@ public class Char implements DataType {
     private int rightBound = 1;//255;
 
     public String nextValue() {
-        return Util.getRndStr(rightBound);
+        return Util.getStr(rightBound);
     }
 
     @Override

@@ -9,12 +9,10 @@ public class Date implements DataType {
     }
     
     private int beginYear = 1000;
-    private int beginMonth = 01;
-    private int beginDay = 01;
-    private int interval = 3284635;
+    private int endYear = 9999;
     
     public String nextValue() {
-        return Util.getRndDate(beginYear, beginMonth, beginDay, interval);
+        return Util.getRndDateString(beginYear, endYear);
     }
 
     @Override

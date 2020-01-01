@@ -2,14 +2,15 @@ package test_tidb.datatypes;
 
 import test_tidb.Util;
 
-public class Blob implements DataType {
+public class Varbinary10 implements DataType {
 
-    //BLOB,0,65535
-    public Blob() {
+    //VARBINARY,0,10000
+    public Varbinary10() {
     }
     
     //private int leftBound = 0;
-    private int rightBound = 5;//65535;
+    //考虑到多字节情况
+    private int rightBound = 3;//10000;
 
     public String nextValue() {
         return Util.getRndStr(rightBound);
@@ -17,10 +18,9 @@ public class Blob implements DataType {
 
     @Override
     public String getDataTypeName() {
-        return "BLOB";
+        return "VARBINARY(10)";
     }
-
-    @Override
+    
     public boolean isQuoteFree() {
         return false;
     }

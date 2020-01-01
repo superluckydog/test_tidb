@@ -15,13 +15,14 @@ public class Timestamp implements DataType {
     }
     
     private int beginYear = 1970;
-    private int beginMonth = 01;
-    private int beginDay = 01;
-    private int interval = 25185;
+    private int endYear = 2037;
+    //private int beginMonth = 01;
+    //private int beginDay = 01;
+    //private int interval = 25185;
     
     public String nextValue() {
         try {
-            return Util.getRndDatetime(beginYear, beginMonth, beginDay, precision, interval);
+            return Util.getRndDatetime(beginYear, endYear, precision);
         } catch (ParseException e) {
             e.printStackTrace();
             StringBuilder sb = new StringBuilder();

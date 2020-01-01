@@ -15,13 +15,11 @@ public class Datetime implements DataType {
     }
     
     private int beginYear = 1000;
-    private int beginMonth = 01;
-    private int beginDay = 01;
-    private int interval = 3284635;
+    private int endYear = 9999;
     
     public String nextValue() {
         try {
-            return Util.getRndDatetime(beginYear, beginMonth, beginDay, precision, interval);
+            return Util.getRndDatetime(beginYear, endYear, precision);
         } catch (ParseException e) {
             e.printStackTrace();
             return "9999-12-31 23:59:59.000000";

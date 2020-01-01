@@ -9,7 +9,7 @@ public class BigintUnsigned implements DataType {
     }
     
     public String nextValue() {
-        return Util.getRndLongUnsigned();
+        return Util.getRndLongUnsignedAbs();
     }
 
     @Override

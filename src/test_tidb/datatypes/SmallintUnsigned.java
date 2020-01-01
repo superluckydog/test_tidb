@@ -18,7 +18,7 @@ public class SmallintUnsigned implements DataType {
 
     @Override
     public String nextValue() {
-        return String.valueOf(Util.getRndInt(rightBound));
+        return String.valueOf(Util.getRndIntAbs(rightBound));
     }
     
     public boolean isQuoteFree() {

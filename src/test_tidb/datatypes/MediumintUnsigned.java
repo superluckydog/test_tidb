@@ -19,7 +19,7 @@ public class MediumintUnsigned implements DataType {
     @Override
     public String nextValue() {
         // TODO Auto-generated method stub
-        return String.valueOf(Util.getRndInt(rightBound));
+        return String.valueOf(Util.getRndIntAbs(rightBound));
     }
     
     public boolean isQuoteFree() {

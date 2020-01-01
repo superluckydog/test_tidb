@@ -27,7 +27,7 @@ import test_tidb.datatypes.Tinyblob;
 import test_tidb.datatypes.Tinyint;
 import test_tidb.datatypes.Tinyint1;
 import test_tidb.datatypes.TinyintUnsigned;
-import test_tidb.datatypes.Varbinary;
+import test_tidb.datatypes.Varbinary10;
 import test_tidb.datatypes.Varchar;
 import test_tidb.datatypes.Year;
 
@@ -73,7 +73,7 @@ public class TestDataTypes {
         System.out.println("tinyint1 : " + tinyint1.nextValue());
         TinyintUnsigned tinyintUnsigned = new TinyintUnsigned();
         System.out.println("tinyintUnsigned : " + tinyintUnsigned.nextValue());
-        Varbinary varbinary = new Varbinary();
+        Varbinary10 varbinary = new Varbinary10();
         System.out.println("varbinary : " + varbinary.nextValue());
         Varchar varchar = new Varchar();
         System.out.println("varchar : " + varchar.nextValue());
